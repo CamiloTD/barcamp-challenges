@@ -11,8 +11,11 @@ window.onload = async function main () {
     let name = localStorage.getItem("name");
 
     if(!name || name == "null") {
-        await Narrator.write("Hola humano...", TEXT_SPEED);
-        await Narrator.write("Soy Coraline, y seré tu acompañante en ésta batalla...", TEXT_SPEED);
+        await Narrator.write("Bienvenido humano", TEXT_SPEED);
+        await Narrator.write(" Haz sido seleccionado para una competencia para una de las redes secretas mas prestigiosas universalmente, para mantener nuestro anonimato emplearemos el nombre de CoralineDB. ", TEXT_SPEED);
+        await Narrator.write(" nuestro proposito al contactarte se trata de que necesitamos un desarrollador web que nos ayude con ciertas dificultades de esganografia ",TEXT_SPEED);
+        await Narrator.write("Que tenemos al investigar a nuestra compañia enemiga, les estamos tendiendo una trampa, necesitamos tu ayuda para lograrlo", TEXT_SPEED);
+        await Narrator.write(" Creemos que TU puedes ayudarnos con esta mision tan importante, para ello te hemos preparado unas prueba ", TEXT_SPEED); 
         await Narrator.write("Sé que las competencias son duras, y estoy dispuesta a ayudarte en todo lo que necesites...", TEXT_SPEED);
         await Narrator.write("Pero primero...", TEXT_SPEED);
         await Narrator.write("¿Podrías darme tu nombre?", TEXT_SPEED);
