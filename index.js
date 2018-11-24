@@ -34,7 +34,7 @@ module.exports = {
 
     users () {
         return Users;
-    }
+    },
 
     submit (chall, user, code) {
         user = toId(user);
