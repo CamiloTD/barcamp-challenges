@@ -1,0 +1,57 @@
+@font-face {
+    font-family: OldSchool;
+    src: url(/fonts/Px/Px437_IBM_MDA.ttf);
+}
+
+* {
+    font-family: OldSchool;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: green;
+}
+
+.console {
+    margin: 10px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+.gretings .line {
+    display: block;
+    width: 100%;
+}
+
+.greetings .line:hover {
+    background: #001100;
+    cursor: pointer;
+}
+
+.header .title {
+    color: cyan;
+}
+
+.header .desc {
+    color: white;
+}
+
+button {
+    background: transparent;
+    border: 1px solid green;
+    color: green;
+    cursor: pointer;
+    padding: 2px;
+    outline: none;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+button:hover {
+    color: black;
+    background: green;
+}

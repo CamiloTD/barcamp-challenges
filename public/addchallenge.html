@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="unete.min.js"></script>
+    <style>
+        .body {
+            display: grid;
+            grid-template-columns: 300px 300px;
+        }
+
+        button {
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agregar Desafio</h1>
+    <div class="body">
+        <label>Name:</label> <input id="name"/>
+        <label>Description:</label> <input id="desc"/>
+        <label>Points:</label> <input type="number" id="pts"/>
+        <label>Solution Code:</label> <input id="code"/>
+        <label>Admin Password:</label> <input type="password" id="pass"/>
+    </div>
+    <br>
+    <button id="ok">OK</button>
+
+    <script>
+        var Unete = Unete.default;
+
+        window.onload = async () => {
+            let ok = document.getElementById("ok");
+            let API = await Unete('http://' + location.host + ":50002");
+
+            ok.onclick = async () => {
+                let name = document.getElementById("name").value;
+                let desc = document.getElementById("desc").value;
+                let points = document.getElementById("pts").value;
+                let code = document.getElementById("code").value;
+                let key = document.getElementById("pass").value;
+
+                if(!name || !desc || !points || !key || !code) return alert("Please complete all fields.");
+
+                try {
+                    await API.addChallenge(key, { name, desc, points, code });
+                    alert("Challenge added sucessfuly");
+                    location.reload();
+                } catch (exc) {
+                    alert(exc);
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>
