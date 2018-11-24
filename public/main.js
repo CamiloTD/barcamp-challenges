@@ -1,16 +1,16 @@
 var Unete = Unete.default;
-const TEXT_SPEED = 1;
+const TEXT_SPEED = 60;
 
 window.onload = async function main () {
     let body = document.body;
     let Console = document.createElement('div'); Console.className="console";
-    let API = await Unete('http://' + location.host + ":50002");
+    let API = await Unete('http://' + location.host + ":50003");
     let challenges = await API.challenges();
 
     let Narrator = animatedSpan("greetings"); Console.append(Narrator); body.append(Console);
     let name = localStorage.getItem("name");
 
-    if(name === "null") {
+    if(!name || name == "null") {
         await Narrator.write("Hola humano...", TEXT_SPEED);
         await Narrator.write("Soy Coraline, y seré tu acompañante en ésta batalla...", TEXT_SPEED);
         await Narrator.write("Sé que las competencias son duras, y estoy dispuesta a ayudarte en todo lo que necesites...", TEXT_SPEED);

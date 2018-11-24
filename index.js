@@ -16,17 +16,19 @@ module.exports = {
     },
 
     users () {
-        return Sessions;
+        return Users;
     },
 
     async challenges () {
         let x = {};
 
+        console.log(Challenges)
+
         for(let i in Challenges) {
-            let { name, desc, owner, winners } = Challenges[i];
+            let { name, desc, owner, winners, points } = Challenges[i];
             files = await readdir('./public/' + toId(name));
 
-            x[i] = { name, desc, owner, winners, files };
+            x[i] = { name, desc, owner, winners, files, points };
         }
 
         return x;
@@ -42,7 +44,7 @@ module.exports = {
         let challenge = Challenges[chall];
 
         if(challenge.code !== code) return false;
-        if(challenge.winners.indexOf(user)) return true;
+        if(challenge.winners.indexOf(user) !== -1) return true;
         
         challenge.winners.push(user);
         Users[user] = (Users[user] || 0 ) + challenge.points;

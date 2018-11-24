@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx unete -m index.js -p 50002 & node express-server"
+    "start": "npx unete -m index.js -p 50003 & node express-server"
   },
   "keywords": [],
   "author": "",
